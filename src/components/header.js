@@ -49,27 +49,6 @@ const Attribute = styled.h2`
   background-color: ${Colours.primary};
 `
 
-const Navigation = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 20px 5%;
-`
-const NavLink = styled(Link)`
-  padding: 2px;
-  margin: 0 0.5em;
-  text-decoration: none;
-  font-style: italic;
-  color: rgba(50, 50, 50, 0.8);
-
-  &:visited {
-    color: rgba(50, 50, 50, 0.8);
-  }
-  &:hover {
-    color: ${Colours.primary};
-  }
-`
-
 const ExternalLinks = styled.div``
 const IconLink = styled.a`
   text-decoration: none;

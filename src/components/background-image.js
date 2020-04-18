@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-//import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 /*
@@ -18,7 +17,7 @@ import BackgroundImage from "gatsby-background-image"
 const BackgroundSection = ({ className, color, children }) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "AuroraHomePage.png" }) {
+      desktop: file(relativePath: { eq: "images/AuroraHomePage.png" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 4160) {
             ...GatsbyImageSharpFluid

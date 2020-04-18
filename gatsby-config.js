@@ -3,7 +3,7 @@ module.exports = {
     title: `Jeremiah Walter`,
     description: `Senior Developer at RXP Services, Technical Lead at Myriad Games Studio`,
     author: `@_Walt3r`,
-    image: `/images/og-image.jpg`,
+    image: `/assets/images/og-image.jpg`,
     contactEmail: `jeremiahwalter.dev@gmail.com`,
     linkedInProfile: `https://www.linkedin.com/in/j-walter`,
     githubRepository: `https://github.com/jeremiah-dev/portfolio`,
@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -30,7 +30,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Avatar.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/Avatar.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -2,8 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 
-import SnowCreationVideoWebM from "../videos/snow-creation.webm"
-import SnowCreationVideoMp4 from "../videos/snow-creation.mp4"
+import SnowCreationVideoWebM from "../assets/videos/snow-creation.webm"
+import SnowCreationVideoMp4 from "../assets/videos/snow-creation.mp4"
 
 import {
   StyledImageWrapper,
@@ -60,14 +60,14 @@ const SnowCreationVideo = () => (
 const ProjectWtSS = () => {
   const data = useStaticQuery(graphql`
     query {
-      WtSSimg1: file(relativePath: { eq: "creepy-snowforest.png" }) {
+      WtSSimg1: file(relativePath: { eq: "images/creepy-snowforest.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      WtSSimg2: file(relativePath: { eq: "dialogue.png" }) {
+      WtSSimg2: file(relativePath: { eq: "images/dialogue.png" }) {
         childImageSharp {
           fluid(maxWidth: 345, quality: 90) {
             ...GatsbyImageSharpFluid
@@ -75,7 +75,7 @@ const ProjectWtSS = () => {
         }
       }
       WtSSimg4: file(
-        relativePath: { eq: "overlooking-destroyed-village.png" }
+        relativePath: { eq: "images/overlooking-destroyed-village.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 345, quality: 90) {
@@ -83,35 +83,35 @@ const ProjectWtSS = () => {
           }
         }
       }
-      WtSSimg5: file(relativePath: { eq: "medium-2.png" }) {
+      WtSSimg5: file(relativePath: { eq: "images/medium-2.png" }) {
         childImageSharp {
           fluid(maxWidth: 345, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      WtSSimg6: file(relativePath: { eq: "medium-3.png" }) {
+      WtSSimg6: file(relativePath: { eq: "images/medium-3.png" }) {
         childImageSharp {
           fluid(maxWidth: 345, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      WtSSimg7: file(relativePath: { eq: "portrait.png" }) {
+      WtSSimg7: file(relativePath: { eq: "images/portrait.png" }) {
         childImageSharp {
           fluid(maxWidth: 345, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      WtSSimg8: file(relativePath: { eq: "snow-meshes.png" }) {
+      WtSSimg8: file(relativePath: { eq: "images/snow-meshes.png" }) {
         childImageSharp {
           fluid(maxWidth: 400, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      WtSSimg9: file(relativePath: { eq: "snow-meshes-2.png" }) {
+      WtSSimg9: file(relativePath: { eq: "images/snow-meshes-2.png" }) {
         childImageSharp {
           fluid(maxWidth: 400, quality: 90) {
             ...GatsbyImageSharpFluid

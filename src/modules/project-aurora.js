@@ -47,21 +47,27 @@ const Offset = styled(StyledImageWrapper)`
 const ProjectAurora = () => {
   const data = useStaticQuery(graphql`
     query {
-      BillPrediction: file(relativePath: { eq: "AuroraBillPrediction.png" }) {
+      BillPrediction: file(
+        relativePath: { eq: "images/AuroraBillPrediction.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 256, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      UsageMobileSMB: file(relativePath: { eq: "AuroraUsageMobileSMB.png" }) {
+      UsageMobileSMB: file(
+        relativePath: { eq: "images/AuroraUsageMobileSMB.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 256, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      HomeMobile: file(relativePath: { eq: "AuroraHomePageMobile.png" }) {
+      HomeMobile: file(
+        relativePath: { eq: "images/AuroraHomePageMobile.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 256, quality: 90) {
             ...GatsbyImageSharpFluid
