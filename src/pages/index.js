@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import ProjectAboutMe from "../modules/project-about-me"
 import ProjectAurora from "../modules/project-aurora"
 import ProjectWtSS from "../modules/project-WtSS"
 

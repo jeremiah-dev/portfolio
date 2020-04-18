@@ -20,7 +20,6 @@ const PageWrapper = styled.div`
 const Body = styled.main`
   // subtract the static heights of the header and footer
   min-height: calc(100vh - 23rem);
-  padding: 2rem 0;
 `
 
 const Layout = ({ children }) => {
