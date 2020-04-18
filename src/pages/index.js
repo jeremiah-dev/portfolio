@@ -19,7 +19,7 @@ const Divider = styled.hr`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Portfolio" />
+      <SEO title="Jeremiah Walter - Web & Game Developer" />
 
       <Project>
         <ProjectWtSS />

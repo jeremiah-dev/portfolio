@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Jeremiah Walter`,
-    description: `Web Development Portfolio`,
+    description: `Senior Developer at RXP Services, Technical Lead at Myriad Games Studio`,
     author: `@_Walt3r`,
+    image: `/images/og-image.jpg`,
     contactEmail: `jeremiahwalter.dev@gmail.com`,
     linkedInProfile: `https://www.linkedin.com/in/j-walter`,
     githubRepository: `https://github.com/jeremiah-dev/portfolio`,
