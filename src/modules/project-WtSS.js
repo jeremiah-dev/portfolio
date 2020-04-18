@@ -183,7 +183,7 @@ const ProjectWtSS = () => {
           supernatural. As the world around her crumbles, Aurelia searches for
           her sister, unraveling mysteries and wonder along the way. This debut
           from Myriad Games Studio is a moving narrative title arriving on PC
-          and XBox in 2020.
+          and Xbox in 2020.
         </Text>
       </Section>
 
@@ -263,7 +263,7 @@ const ProjectWtSS = () => {
             Andrew Mendlik
           </StyledLink>
           ), this tool was created to allow level editors to quickly add or edit
-          snow-drifts throughout a scene. Here's a high level overview of how
+          snow-drifts throughout a scene. Here's a high-level overview of how
           the tool is used:
         </Text>
         <StyledList>
@@ -297,7 +297,7 @@ const ProjectWtSS = () => {
               above threshold.
             </StyledListItem>
             <StyledListItem>
-              Once no more neighboring vertices are eligible, the mesh is
+              Once no more neighbouring vertices are eligible, the mesh is
               created and the search for any other valid snow continues, in a
               recursive fashion.
             </StyledListItem>
