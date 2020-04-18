@@ -50,8 +50,16 @@ const Offset = styled(StyledImageWrapper)`
     `}
 `
 
+// need to add poster={image}
 const SnowCreationVideo = () => (
-  <video autoPlay loop playsInline style={{ width: "100%", display: "block" }}>
+  <video
+    autoPlay
+    loop
+    playsInline
+    muted
+    preload="auto"
+    style={{ width: "100%", display: "block" }}
+  >
     <source src={SnowCreationVideoWebM} type="video/webm" />
     <source src={SnowCreationVideoMp4} type="video/mp4" />
   </video>
