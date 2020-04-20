@@ -184,7 +184,7 @@ const ProjectWtSS = () => {
         <Caption>All in-engine images are a work in progress.</Caption>
       </Section>
 
-      <Section>
+      <Section style={{ padding: "40px 100px" }}>
         <Heading centered>A Heartfelt Tale</Heading>
         <Text>
           Where the Snow Settles is a game about loss, growth, and the
