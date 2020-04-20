@@ -20,8 +20,15 @@ const Divider = styled.hr`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Jeremiah Walter - Web & Game Developer" />
+      <SEO
+        title="Jeremiah Walter - Web & Game Developer"
+        image={data.SocialMediaPreview.childImageSharp.fixed}
+      />
 
+      <Project>
+        <ProjectAboutMe />
+      </Project>
+      <Divider />
       <Project>
         <ProjectWtSS />
       </Project>
@@ -35,9 +42,11 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        contactEmail
+    SocialMediaPreview: file(relativePath: { eq: "images/og-image.png" }) {
+      childImageSharp {
+        fixed(width: 1200, height: 630, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }

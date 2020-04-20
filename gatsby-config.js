@@ -3,7 +3,7 @@ module.exports = {
     title: `Jeremiah Walter`,
     description: `Senior Developer at RXP Services, Technical Lead at Myriad Games Studio`,
     author: `@_Walt3r`,
-    image: `/assets/images/og-image.png`,
+    siteUrl: `https://jeremiahwalter.com`,
     contactEmail: `jeremiahwalter.dev@gmail.com`,
     linkedInProfile: `https://www.linkedin.com/in/j-walter`,
     githubRepository: `https://github.com/jeremiah-dev/portfolio`,
