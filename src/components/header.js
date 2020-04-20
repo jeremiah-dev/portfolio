@@ -15,7 +15,7 @@ import { Colours } from "../utils/constants"
 
 const StyledHeader = styled.header`
   min-height: 14rem;
-  padding: 20px 0;
+  padding: 2rem 0;
 `
 const Content = styled.section`
   display: flex;
