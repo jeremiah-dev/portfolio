@@ -74,6 +74,13 @@ const ProjectAurora = () => {
           }
         }
       }
+      Usage: file(relativePath: { eq: "images/usage-medium.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -117,8 +124,10 @@ const ProjectAurora = () => {
 
         <ProjectSummaryContent>
           <Heading>Technology</Heading>
-          <Text>React / React Native</Text>
+          <Text>React</Text>
           <Text>C# / .Net MVC</Text>
+          <Text>Web API 2</Text>
+          <Text>Azure AD</Text>
           <Text>TeamCity</Text>
           <Text>Semantic UI</Text>
           <Text>D3.js</Text>
@@ -126,13 +135,17 @@ const ProjectAurora = () => {
       </ProjectSummaryWrapper>
 
       <Section>
-        <Offset width={col3Width} left>
+        <Offset
+          width={col3Width}
+          left
+          shadowColour={"rgba(27, 124, 188, 0.15)"}
+        >
           <StyledImage fluid={data.HomeMobile.childImageSharp.fluid} />
         </Offset>
-        <Offset width={col3Width}>
+        <Offset width={col3Width} shadowColour={"rgba(45, 52, 75, 0.15)"}>
           <StyledImage fluid={data.BillPrediction.childImageSharp.fluid} />
         </Offset>
-        <Offset width={col3Width} right>
+        <Offset width={col3Width} right shadowColour={"rgba(45, 52, 75, 0.15)"}>
           <StyledImage fluid={data.UsageMobileSMB.childImageSharp.fluid} />
         </Offset>
         <Caption>
@@ -149,20 +162,6 @@ const ProjectAurora = () => {
       </Section>
 
       <Section>
-        <Heading centered>API Broker</Heading>
-        <Text>
-          Aurora have introduced a new backend system for eventually storing all
-          of their 270,000+ customers, along with their billing and electricity
-          usage history.
-        </Text>
-        <Text>
-          The Broker is a new API layer we introduced to enable queries to both
-          old and new system with the one Azure AD identity, mapping data from
-          both to a common, standardised format.
-        </Text>
-      </Section>
-
-      <Section>
         <Heading centered>SMB Product</Heading>
         <Text>
           <i>Currently in development.</i>
@@ -171,13 +170,47 @@ const ProjectAurora = () => {
           Previously, only residential customers have been able to use the
           Aurora+ App. This project introduces a new product, aimed at small and
           medium business customers. This will allow eligible customers to view
-          their properties' electricity usage, pay their bills, and switch
-          between all of their residential and business accounts and premises.
+          their properties' electricity usage (from yearly, down to an hourly
+          break-down), pay their bills, and switch between all of their
+          residential and business accounts and premises.
         </Text>
         <Text>
-          A number of new tools and services will also be added, such as
-          post-pay billing, bill prediction, business-specific tariffs, and
-          business-themed styling.
+          As part of this project, a number of new tools and services will also
+          be added, such as post-pay billing, bill prediction, business-specific
+          tariffs, and a business-themed style.
+        </Text>
+      </Section>
+
+      <Section>
+        <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
+          <StyledImage fluid={data.Usage.childImageSharp.fluid} />
+        </StyledImageWrapper>
+        <Caption>
+          The Solar project involved adding all things Solar to the App. The
+          Usage graph is quite dynamic, showing dollar, killowatt or Solar-only
+          views, in different time periods, such as yearly, or hourly. Popups
+          also give more info on every facet of data, such as the totals for
+          each bar.
+          <span style={{ display: "block", marginTop: "3px" }}>
+            {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
+            Ltd.
+          </span>
+        </Caption>
+      </Section>
+
+      <Section>
+        <Heading centered>API Broker</Heading>
+        <Text>
+          Aurora recently introduced a new backend system for eventually storing
+          all of their 270,000+ customers, along with all of their billing and
+          electricity usage history.
+        </Text>
+        <Text>
+          The 'Broker' is an API layer that we introduced to enable queries to
+          both old and new system with the one Azure AD identity, mapping data
+          from both to a common, standardised format. This work required no
+          changes to the frontend, and allowed customers to transition to the
+          new database solution with no interruption of service.
         </Text>
       </Section>
     </>
