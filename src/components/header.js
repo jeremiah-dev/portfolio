@@ -14,7 +14,7 @@ import {
 import { Colours } from "../utils/constants"
 
 const StyledHeader = styled.header`
-  min-height: 16rem;
+  min-height: 14rem;
   padding: 20px 0;
 `
 const Content = styled.section`

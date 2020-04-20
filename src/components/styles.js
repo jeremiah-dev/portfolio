@@ -11,8 +11,8 @@ export const Section = styled.section`
   ${props =>
     props.bgColor &&
     css`
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
       background-color: ${props.bgColor};
 
       a {
