@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0f10065b-9844-4f94-a9bf-5081958dff24/deploy-status)](https://app.netlify.com/sites/stoic-hypatia-e67549/deploys)
