@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Section, Text, StyledLink, Heading } from "../components/styles"
 
 const NotFoundPage = ({ data }) => (
   <Layout>
@@ -9,8 +10,12 @@ const NotFoundPage = ({ data }) => (
       title="404: Not found"
       image={data.SocialMediaPreview.childImageSharp.fixed}
     />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Section style={{ textAlign: "center" }}>
+      <h1>PAGE NOT FOUND</h1>
+      <Text>
+        Return <StyledLink href="/">home</StyledLink>.
+      </Text>
+    </Section>
   </Layout>
 )
 

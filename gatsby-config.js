@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://jeremiahwalter.com`,
     contactEmail: `jeremiahwalter.dev@gmail.com`,
     linkedInProfile: `https://www.linkedin.com/in/j-walter`,
-    githubRepository: `https://github.com/jeremiah-dev/portfolio`,
+    githubRepository: `https://github.com/jeremiah-dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

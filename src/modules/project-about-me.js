@@ -5,28 +5,7 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
-import { Colours } from "../utils/constants"
-
-import {
-  StyledImageWrapper,
-  StyledImage,
-  StyledContent,
-  ContentImageBlock,
-} from "../components/image-block"
-import {
-  Section,
-  Heading,
-  StyledLink,
-  Text,
-  Caption,
-  StyledList,
-  StyledListItem,
-} from "../components/styles"
-import {
-  ProjectSummaryWrapper,
-  ProjectSummaryContent,
-  ProjectSummaryColumn,
-} from "../components/project-summary"
+import { Section, Heading, StyledLink, Text } from "../components/styles"
 
 const Button = styled.a`
   font-size: 1rem;
@@ -102,9 +81,9 @@ const ProjectAboutMe = () => {
         </Text>
         <Text>
           I've worked with clients such as; Helloworld Travel, Lendlease,
-          Challenger, and Coca-Cola Amatil, providing a variety of web sites and
-          services. The majority of my work has been remote, with only my most
-          recent work for Aurora Energy being local and on-site.
+          Challenger, and Coca-Cola Amatil, providing a variety of data-driven
+          web sites and services. The majority of my work has been remote, with
+          only my most recent work for Aurora Energy being local and on-site.
         </Text>
         <Text>
           Please take a look through my latest projects below, or the{" "}

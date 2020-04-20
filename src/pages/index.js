@@ -28,14 +28,20 @@ const IndexPage = ({ data }) => {
       <Project>
         <ProjectAboutMe />
       </Project>
+
       <Divider />
+
       <Project>
         <ProjectWtSS />
       </Project>
+
       <Divider />
+
       <Project>
         <ProjectAurora />
       </Project>
+
+      <Divider />
     </Layout>
   )
 }
