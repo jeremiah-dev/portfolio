@@ -81,6 +81,13 @@ const ProjectAurora = () => {
           }
         }
       }
+      UsageMobile: file(relativePath: { eq: "images/usage-small.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 270, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -135,30 +142,36 @@ const ProjectAurora = () => {
       </ProjectSummaryWrapper>
 
       <Section>
-        <Offset
-          width={col3Width}
-          left
-          shadowColour={"rgba(27, 124, 188, 0.15)"}
-        >
-          <StyledImage fluid={data.HomeMobile.childImageSharp.fluid} />
-        </Offset>
-        <Offset width={col3Width} shadowColour={"rgba(45, 52, 75, 0.15)"}>
-          <StyledImage fluid={data.BillPrediction.childImageSharp.fluid} />
-        </Offset>
-        <Offset width={col3Width} right shadowColour={"rgba(45, 52, 75, 0.15)"}>
-          <StyledImage fluid={data.UsageMobileSMB.childImageSharp.fluid} />
-        </Offset>
-        <Caption>
-          Designs by{" "}
-          <StyledLink href="http://www.nickrudenno.com/" target="blank">
-            Nick Rudenno
-          </StyledLink>
-          .{" "}
-          <span>
-            {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
-            Ltd.
-          </span>
-        </Caption>
+        <div style={{ margin: "0 -4%" }}>
+          <Offset
+            width={col3Width}
+            left
+            shadowColour={"rgba(27, 124, 188, 0.15)"}
+          >
+            <StyledImage fluid={data.HomeMobile.childImageSharp.fluid} />
+          </Offset>
+          <Offset width={col3Width} shadowColour={"rgba(45, 52, 75, 0.15)"}>
+            <StyledImage fluid={data.BillPrediction.childImageSharp.fluid} />
+          </Offset>
+          <Offset
+            width={col3Width}
+            right
+            shadowColour={"rgba(45, 52, 75, 0.15)"}
+          >
+            <StyledImage fluid={data.UsageMobileSMB.childImageSharp.fluid} />
+          </Offset>
+          <Caption>
+            Designs by{" "}
+            <StyledLink href="http://www.nickrudenno.com/" target="blank">
+              Nick Rudenno
+            </StyledLink>
+            .{" "}
+            <span>
+              {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
+              Ltd.
+            </span>
+          </Caption>
+        </div>
       </Section>
 
       <Section>
@@ -181,16 +194,26 @@ const ProjectAurora = () => {
         </Text>
       </Section>
 
-      <Section>
+      <Section style={{ position: "relative" }}>
         <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
           <StyledImage fluid={data.Usage.childImageSharp.fluid} />
         </StyledImageWrapper>
+        <StyledImageWrapper
+          shadowColour={"rgba(0,0,0, 0.1)"}
+          style={{
+            position: "absolute",
+            top: "20px",
+            right: "90px",
+            width: "270px",
+          }}
+        >
+          <StyledImage fluid={data.UsageMobile.childImageSharp.fluid} />
+        </StyledImageWrapper>
         <Caption>
-          The Solar project involved adding all things Solar to the App. The
-          Usage graph is quite dynamic, showing dollar, killowatt or Solar-only
-          views, in different time periods, such as yearly, or hourly. Popups
-          also give more info on every facet of data, such as the totals for
-          each bar.
+          Desktop and mobile versions. The Usage graph is quite dynamic, showing
+          dollar, kilowatt or export (solar) views, in different time periods,
+          such as yearly, or hourly. Popups also give more info on every facet
+          of the displayed data.
           <span style={{ display: "block", marginTop: "3px" }}>
             {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
             Ltd.

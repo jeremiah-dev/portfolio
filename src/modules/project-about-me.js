@@ -101,7 +101,7 @@ const ProjectAboutMe = () => {
             target="blank"
           >
             <IconInButton icon={faEnvelope} />
-            message me
+            Message me
           </Button>
         </Text>
       </Section>
