@@ -1,12 +1,28 @@
 import styled, { css } from "styled-components"
 
-import { Colours } from "../utils/constants"
+import { Colours, Responsive } from "../utils/constants"
 import { LightenDarkenHexColor } from "../utils/color-functions"
 
 export const Section = styled.section`
   margin: auto;
-  padding: ${props => (props.large ? "40px 36px" : "40px 0")};
-  width: ${props => (props.large ? "840px" : "768px")};
+  padding: 40px 30px;
+  width: 100%;
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    padding: ${props => (props.large ? "40px 36px" : "40px 0")};
+    width: ${props =>
+      props.large
+        ? Responsive.med.container + 72 + "px"
+        : Responsive.med.container + "px"};
+  }
+
+  @media (min-width: ${Responsive.lrg.minWidth}px) {
+    padding: ${props => (props.large ? "40px 36px" : "40px 0")};
+    width: ${props =>
+      props.large
+        ? Responsive.lrg.container + 72 + "px"
+        : Responsive.lrg.container + "px"};
+  }
 
   ${props =>
     props.bgColor &&

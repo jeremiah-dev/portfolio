@@ -1,28 +1,38 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled, { css } from "styled-components"
+import { Responsive } from "../utils/constants"
 
 const StyledImageWrapper = styled.div`
   border: 4px solid white;
   border-radius: 4px;
   background-color: white;
   vertical-align: middle;
-  margin: ${props => props.margin || 0}%;
-  width: ${props => props.width || "initial"}%;
-
-  ${props =>
-    props.display &&
-    css`
-      display: ${props.display};
-    `};
+  margin: 30px -20px 0 -20px;
+  width: initial;
 
   ${props =>
     props.shadowColour &&
-    // shadowColour should be either black or the main image colour
     css`
       box-shadow: 0 0 15px 10px ${props.shadowColour},
         0 0 5px 1px ${props.shadowColour}, 0 0 9px 5px ${props.shadowColour};
     `};
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    margin: ${props => props.margin || 0}%;
+
+    ${props =>
+      props.width &&
+      css`
+        width: ${props => props.width}%;
+      `};
+
+    ${props =>
+      props.display &&
+      css`
+        display: ${props.display};
+      `};
+  }
 `
 const StyledImage = styled(Img)`
   border-radius: 4px;
@@ -30,10 +40,20 @@ const StyledImage = styled(Img)`
 
 const StyledContent = styled.div`
   vertical-align: middle;
-  margin: ${props => props.margin || 0}%;
-  display: ${props => props.display};
   text-align: ${props => (props.align ? "left" : "center")};
-  width: ${props => props.width}%;
+  width: initial;
+  margin: 40px 0;
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    display: ${props => props.display};
+    margin: ${props => props.margin || 0}%;
+
+    ${props =>
+      props.width &&
+      css`
+        width: ${props => props.width}%;
+      `};
+  }
 `
 
 const ContentImageBlock = ({ src, width, align, shadowColour, children }) => {

@@ -6,6 +6,21 @@ export const Colours = {
   bgColor: "#f8f8f8",
 }
 
+export const Responsive = {
+  sml: {
+    // minWidth: 0,
+    // container: 100%,
+  },
+  med: {
+    minWidth: 500,
+    container: 480,
+  },
+  lrg: {
+    minWidth: 1000,
+    container: 768,
+  },
+}
+
 //export const Fonts = {
 
 //}
