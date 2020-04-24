@@ -1,4 +1,3 @@
-import React from "react"
 import styled, { css } from "styled-components"
 import { Section } from "../components/styles"
 import { Responsive } from "../utils/constants"
@@ -12,6 +11,7 @@ export const ProjectSummaryWrapper = styled(Section)`
 
   @media (min-width: ${Responsive.med.minWidth}px) {
     flex-direction: row;
+    padding-bottom: 0;
   }
 `
 

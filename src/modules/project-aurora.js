@@ -6,7 +6,6 @@ import { Responsive } from "../utils/constants"
 import {
   StyledImageWrapper,
   StyledImage,
-  StyledContent,
   Offset,
   OffsetWrapper,
 } from "../components/image-block"
@@ -16,7 +15,6 @@ import {
   StyledLink,
   Text,
   Caption,
-  MobileOnly,
   DesktopOnly,
 } from "../components/styles"
 import {
@@ -28,7 +26,7 @@ import {
 const FloatingImageWrapper = styled(StyledImageWrapper)`
   @media (min-width: ${Responsive.med.minWidth}px) {
     position: absolute;
-    top: 20px;
+    top: 65px;
     right: 90px;
     width: 270px;
   }
@@ -138,19 +136,26 @@ const ProjectAurora = () => {
             width={col3Width}
             left
             shadowColour={"rgba(27, 124, 188, 0.15)"}
+            margin={1.25}
           >
             <StyledImage fluid={data.HomeMobile.childImageSharp.fluid} />
           </Offset>
-          <Offset width={col3Width} shadowColour={"rgba(45, 52, 75, 0.15)"}>
+          <Offset
+            width={col3Width}
+            shadowColour={"rgba(45, 52, 75, 0.15)"}
+            margin={1.25}
+          >
             <StyledImage fluid={data.BillPrediction.childImageSharp.fluid} />
           </Offset>
           <Offset
             width={col3Width}
             right
             shadowColour={"rgba(45, 52, 75, 0.15)"}
+            margin={1.25}
           >
             <StyledImage fluid={data.UsageMobileSMB.childImageSharp.fluid} />
           </Offset>
+
           <Caption>
             Designs by{" "}
             <StyledLink href="http://www.nickrudenno.com/" target="blank">
@@ -195,11 +200,10 @@ const ProjectAurora = () => {
           <StyledImage fluid={data.UsageMobile.childImageSharp.fluid} />
         </FloatingImageWrapper>
         <Caption>
-          <MobileOnly>Mobile version</MobileOnly>
           <DesktopOnly>Desktop and mobile versions</DesktopOnly>. The Usage
-          graph is quite dynamic, showing dollar, kilowatt or export (solar)
-          views, in different time periods, such as yearly, or hourly. Popups
-          also give more info on every facet of the displayed data.
+          graph is dynamic, showing dollar, kilowatt or export (solar) views, in
+          different time periods, such as yearly, or hourly. Popups also give
+          more info on every facet of the displayed data.
           <span style={{ display: "block", marginTop: "3px" }}>
             {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
             Ltd.

@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import { Responsive } from "../utils/constants"
 
@@ -12,9 +12,7 @@ import InteractablesVideoMp4 from "../assets/videos/interactables.mp4"
 import {
   StyledImageWrapper,
   StyledImage,
-  StyledContent,
   ContentImageBlock,
-  Offset,
 } from "../components/image-block"
 import {
   Section,
@@ -129,8 +127,8 @@ const ProjectWtSS = () => {
     }
   `)
 
-  // minus the default StyledImage margin
-  const colWidth = (1 / 3) * 100 - 3
+  const marginTotal = 3
+  const colWidth = (1 / 3) * 100 - marginTotal
 
   /*
     <Section>

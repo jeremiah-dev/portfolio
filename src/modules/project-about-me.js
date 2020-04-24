@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 import { Section, Heading, StyledLink, Text } from "../components/styles"
+import { Responsive } from "../utils/constants"
 
 const Button = styled.a`
   font-size: 1rem;
@@ -43,6 +44,11 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const IconInButton = styled(StyledIcon)`
   vertical-align: middle;
 `
+const SmallerSection = styled(Section)`
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    padding: 40px 100px;
+  }
+`
 
 const ProjectAboutMe = () => {
   const data = useStaticQuery(graphql`
@@ -66,7 +72,7 @@ const ProjectAboutMe = () => {
         </Text>
       </Section>
 
-      <Section>
+      <SmallerSection>
         <Heading>About Me</Heading>
         <Text>
           I'm currently working at{" "}
@@ -79,12 +85,7 @@ const ProjectAboutMe = () => {
           </StyledLink>{" "}
           as the Lead Programmer.
         </Text>
-        <Text>
-          I've worked with clients such as; Helloworld Travel, Lendlease,
-          Challenger, and Coca-Cola Amatil, providing a variety of data-driven
-          web sites and services. The majority of my work has been remote, with
-          only my most recent work for Aurora Energy being local and on-site.
-        </Text>
+        <br />
         <Text>
           Please take a look through my latest projects below, or the{" "}
           <StyledLink
@@ -104,7 +105,7 @@ const ProjectAboutMe = () => {
             Message me
           </Button>
         </Text>
-      </Section>
+      </SmallerSection>
     </>
   )
 }
