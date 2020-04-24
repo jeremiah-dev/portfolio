@@ -90,3 +90,16 @@ export const StyledListItem = styled.li`
     line-height: 1;
   }
 `
+
+export const DesktopOnly = styled.span`
+  display: none;
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    display: initial;
+  }
+`
+export const MobileOnly = styled.span`
+  display: intiial;
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    display: none;
+  }
+`

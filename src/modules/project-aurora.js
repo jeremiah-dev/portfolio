@@ -1,11 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
+import { Responsive } from "../utils/constants"
 
 import {
   StyledImageWrapper,
   StyledImage,
   StyledContent,
+  Offset,
+  OffsetWrapper,
 } from "../components/image-block"
 import {
   Section,
@@ -13,6 +16,8 @@ import {
   StyledLink,
   Text,
   Caption,
+  MobileOnly,
+  DesktopOnly,
 } from "../components/styles"
 import {
   ProjectSummaryWrapper,
@@ -20,28 +25,13 @@ import {
   ProjectSummaryColumn,
 } from "../components/project-summary"
 
-const Offset = styled(StyledImageWrapper)`
-  position: relative;
-  display: inline-block;
-  z-index: 50;
-
-  ${props =>
-    props.right &&
-    css`
-      left: -30px;
-      top: -15px;
-      margin-right: 30px;
-      z-index: 0;
-    `}
-
-  ${props =>
-    props.left &&
-    css`
-      left: 30px;
-      top: -15px;
-      margin-left: 30px;
-      z-index: 0;
-    `}
+const FloatingImageWrapper = styled(StyledImageWrapper)`
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    width: 270px;
+  }
 `
 
 const ProjectAurora = () => {
@@ -92,7 +82,8 @@ const ProjectAurora = () => {
   `)
 
   // minus the default StyledImage margin
-  const col3Width = (1 / 3) * 100 - 3
+  const containerAdjustment = 4
+  const col3Width = (1 / 3) * 100 - (3 - containerAdjustment / 8)
 
   return (
     <>
@@ -142,7 +133,7 @@ const ProjectAurora = () => {
       </ProjectSummaryWrapper>
 
       <Section>
-        <div style={{ margin: "0 -4%" }}>
+        <OffsetWrapper widthAdjustment={`${containerAdjustment}%`}>
           <Offset
             width={col3Width}
             left
@@ -171,7 +162,7 @@ const ProjectAurora = () => {
               Ltd.
             </span>
           </Caption>
-        </div>
+        </OffsetWrapper>
       </Section>
 
       <Section>
@@ -195,25 +186,20 @@ const ProjectAurora = () => {
       </Section>
 
       <Section style={{ position: "relative" }}>
-        <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
-          <StyledImage fluid={data.Usage.childImageSharp.fluid} />
-        </StyledImageWrapper>
-        <StyledImageWrapper
-          shadowColour={"rgba(0,0,0, 0.1)"}
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "90px",
-            width: "270px",
-          }}
-        >
+        <DesktopOnly>
+          <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
+            <StyledImage fluid={data.Usage.childImageSharp.fluid} />
+          </StyledImageWrapper>
+        </DesktopOnly>
+        <FloatingImageWrapper shadowColour={"rgba(0,0,0, 0.1)"}>
           <StyledImage fluid={data.UsageMobile.childImageSharp.fluid} />
-        </StyledImageWrapper>
+        </FloatingImageWrapper>
         <Caption>
-          Desktop and mobile versions. The Usage graph is quite dynamic, showing
-          dollar, kilowatt or export (solar) views, in different time periods,
-          such as yearly, or hourly. Popups also give more info on every facet
-          of the displayed data.
+          <MobileOnly>Mobile version</MobileOnly>
+          <DesktopOnly>Desktop and mobile versions</DesktopOnly>. The Usage
+          graph is quite dynamic, showing dollar, kilowatt or export (solar)
+          views, in different time periods, such as yearly, or hourly. Popups
+          also give more info on every facet of the displayed data.
           <span style={{ display: "block", marginTop: "3px" }}>
             {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
             Ltd.

@@ -32,8 +32,15 @@ const StyledImageWrapper = styled.div`
       css`
         display: ${props.display};
       `};
+
+    ${props =>
+      props.top &&
+      css`
+        top: ${props.top};
+      `};
   }
 `
+
 const StyledImage = styled(Img)`
   border-radius: 4px;
 `
@@ -53,6 +60,43 @@ const StyledContent = styled.div`
       css`
         width: ${props => props.width}%;
       `};
+  }
+`
+
+export const OffsetWrapper = styled.div`
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    ${props =>
+      props.widthAdjustment &&
+      css`
+        margin: 0 -${props.widthAdjustment};
+      `}
+  }
+`
+
+export const Offset = styled(StyledImageWrapper)`
+  position: relative;
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    display: inline-block;
+    z-index: 50;
+
+    ${props =>
+      props.right &&
+      css`
+        left: -30px;
+        top: -15px;
+        //margin-right: 30px;
+        z-index: 0;
+      `}
+
+    ${props =>
+      props.left &&
+      css`
+        left: 30px;
+        top: -15px;
+        //margin-left: 30px;
+        z-index: 0;
+      `}
   }
 `
 

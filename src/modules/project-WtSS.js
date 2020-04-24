@@ -2,14 +2,19 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 
+import { Responsive } from "../utils/constants"
+
 import SnowCreationVideoWebM from "../assets/videos/snow-creation.webm"
 import SnowCreationVideoMp4 from "../assets/videos/snow-creation.mp4"
+import InteractablesVideoWebM from "../assets/videos/interactables.webm"
+import InteractablesVideoMp4 from "../assets/videos/interactables.mp4"
 
 import {
   StyledImageWrapper,
   StyledImage,
   StyledContent,
   ContentImageBlock,
+  Offset,
 } from "../components/image-block"
 import {
   Section,
@@ -26,28 +31,10 @@ import {
   ProjectSummaryColumn,
 } from "../components/project-summary"
 
-const Offset = styled(StyledImageWrapper)`
-  position: relative;
-  display: inline-block;
-  z-index: 50;
-
-  ${props =>
-    props.right &&
-    css`
-      left: -30px;
-      top: -15px;
-      margin-right: 30px;
-      z-index: 0;
-    `}
-
-  ${props =>
-    props.left &&
-    css`
-      left: 30px;
-      top: -15px;
-      margin-left: 30px;
-      z-index: 0;
-    `}
+const SmallerSection = styled(Section)`
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    padding: 40px 100px;
+  }
 `
 
 // need to add poster={image}
@@ -62,6 +49,19 @@ const SnowCreationVideo = () => (
   >
     <source src={SnowCreationVideoWebM} type="video/webm" />
     <source src={SnowCreationVideoMp4} type="video/mp4" />
+  </video>
+)
+const InteractablesVideo = () => (
+  <video
+    autoPlay
+    loop
+    playsInline
+    muted
+    preload="auto"
+    style={{ width: "100%", display: "block" }}
+  >
+    <source src={InteractablesVideoWebM} type="video/webm" />
+    <source src={InteractablesVideoMp4} type="video/mp4" />
   </video>
 )
 
@@ -91,9 +91,9 @@ const ProjectWtSS = () => {
           }
         }
       }
-      WtSSimg5: file(relativePath: { eq: "images/medium-2.png" }) {
+      WtSSimg5: file(relativePath: { eq: "images/interactables.png" }) {
         childImageSharp {
-          fluid(maxWidth: 345, quality: 90) {
+          fluid(maxWidth: 500, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -131,6 +131,25 @@ const ProjectWtSS = () => {
 
   // minus the default StyledImage margin
   const colWidth = (1 / 3) * 100 - 3
+
+  /*
+    <Section>
+        <Caption
+          style={{ display: "inline-block", width: "48%", margin: "1%" }}
+        >
+          Setup of a basic dialogue trigger. Includes triggered camera change,
+          UI prompt and a dynamic (pooled) dialogue popup.
+        </Caption>
+        <StyledImageWrapper
+          width="48"
+          margin="1"
+          display="inline-block"
+          shadowColour={"rgba(45, 52, 75, 0.15)"}
+        >
+          <StyledImage fluid={data.WtSSimg5.childImageSharp.fluid} />
+        </StyledImageWrapper>
+      </Section>
+     */
 
   return (
     <>
@@ -184,7 +203,7 @@ const ProjectWtSS = () => {
         <Caption>All in-engine images are a work in progress.</Caption>
       </Section>
 
-      <Section style={{ padding: "40px 100px" }}>
+      <Section>
         <Heading centered>A Heartfelt Tale</Heading>
         <Text>
           Where the Snow Settles is a game about loss, growth, and the
@@ -195,37 +214,17 @@ const ProjectWtSS = () => {
         </Text>
       </Section>
 
-      <Section>
-        <div style={{ paddingTop: "15px" }}>
-          <Offset
-            style={{ top: "0" }}
-            width={colWidth}
-            left
-            shadowColour={"rgba(45, 52, 75, 0.15)"}
-          >
-            <StyledImage fluid={data.WtSSimg5.childImageSharp.fluid} />
-          </Offset>
-          <Offset
-            style={{ top: "-15px" }}
-            width={colWidth}
-            shadowColour={"rgba(200,200,200, 0.15)"}
-          >
-            <StyledImage fluid={data.WtSSimg6.childImageSharp.fluid} />
-          </Offset>
-          <Offset
-            style={{ top: "0px" }}
-            width={colWidth}
-            right
-            shadowColour={"rgba(45, 52, 75, 0.15)"}
-          >
-            <StyledImage fluid={data.WtSSimg7.childImageSharp.fluid} />
-          </Offset>
-          <Caption>
-            Setup of a basic dialogue trigger. Includes triggered camera change,
-            UI prompt and a dynamic (pooled) dialogue popup.
-          </Caption>
+      <SmallerSection>
+        <div style={{ margin: "auto" }}>
+          <StyledImageWrapper shadowColour={"rgba(181, 198, 207, 0.3)"}>
+            <InteractablesVideo />
+          </StyledImageWrapper>
         </div>
-      </Section>
+        <Caption>
+          Setup of a basic dialogue trigger. Includes triggered camera change,
+          UI prompt and a dynamic (pooled) dialogue popup.
+        </Caption>
+      </SmallerSection>
 
       <Section large bgColor="white">
         <Heading centered>My Work</Heading>
