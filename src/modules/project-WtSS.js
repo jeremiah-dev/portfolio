@@ -73,43 +73,6 @@ const ProjectWtSS = () => {
           }
         }
       }
-      WtSSimg2: file(relativePath: { eq: "images/dialogue.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 345, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg4: file(
-        relativePath: { eq: "images/overlooking-destroyed-village.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 345, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg5: file(relativePath: { eq: "images/interactables.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg6: file(relativePath: { eq: "images/medium-3.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 345, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg7: file(relativePath: { eq: "images/portrait.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 345, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       WtSSimg8: file(relativePath: { eq: "images/snow-meshes.png" }) {
         childImageSharp {
           fluid(maxWidth: 400, quality: 90) {
@@ -126,28 +89,6 @@ const ProjectWtSS = () => {
       }
     }
   `)
-
-  const marginTotal = 3
-  const colWidth = (1 / 3) * 100 - marginTotal
-
-  /*
-    <Section>
-        <Caption
-          style={{ display: "inline-block", width: "48%", margin: "1%" }}
-        >
-          Setup of a basic dialogue trigger. Includes triggered camera change,
-          UI prompt and a dynamic (pooled) dialogue popup.
-        </Caption>
-        <StyledImageWrapper
-          width="48"
-          margin="1"
-          display="inline-block"
-          shadowColour={"rgba(45, 52, 75, 0.15)"}
-        >
-          <StyledImage fluid={data.WtSSimg5.childImageSharp.fluid} />
-        </StyledImageWrapper>
-      </Section>
-     */
 
   return (
     <>
@@ -202,7 +143,7 @@ const ProjectWtSS = () => {
       </Section>
 
       <Section>
-        <Heading centered>A Heartfelt Tale</Heading>
+        <Heading>A Heartfelt Tale</Heading>
         <Text>
           Where the Snow Settles is a game about loss, growth, and the
           supernatural. As the world around her crumbles, Aurelia searches for
@@ -260,8 +201,8 @@ const ProjectWtSS = () => {
         </StyledList>
       </Section>
 
-      <Section style={{ paddingBottom: "10px" }}>
-        <Heading centered>An Example Tool: Snow Mesh Generator</Heading>
+      <Section>
+        <Heading>An Example Tool: Snow Mesh Generator</Heading>
         <Text>
           In collaboration with our Technical Artist (
           <StyledLink href="https://twitter.com/andrew_mendlik" target="blank">
@@ -337,7 +278,7 @@ const ProjectWtSS = () => {
         </ContentImageBlock>
       </Section>
 
-      <Section style={{ paddingTop: "10px" }}>
+      <Section>
         <Heading>The Final Prototype</Heading>
         <Text style={{ marginBottom: "2rem" }}>
           Here's the result, in combination with Andrew's shader and render
