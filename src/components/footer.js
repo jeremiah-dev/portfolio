@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons"
 import {
   faTwitter,
   faLinkedin,
@@ -21,6 +20,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   font-size: 0.75rem;
   min-height: 3rem;
+  padding: 0 20px;
 `
 
 const ExternalLinks = styled(Section)`
