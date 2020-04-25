@@ -3,14 +3,14 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import { Colours } from "../utils/constants"
-import Header from "./header"
-import Footer from "./footer"
-
 import "typeface-open-sans"
 import "typeface-roboto"
 import "typeface-sansita"
 import "./layout.css"
+
+import { Colours } from "../utils/constants"
+import Header from "./header"
+import Footer from "./footer"
 
 const PageWrapper = styled.div`
   padding: 2rem 0;

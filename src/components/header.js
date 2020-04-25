@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
@@ -11,7 +10,7 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons"
 
-import { Colours } from "../utils/constants"
+import { Colours, Responsive } from "../utils/constants"
 
 const StyledHeader = styled.header`
   min-height: 14rem;
@@ -64,8 +63,55 @@ const IconLink = styled.a`
   }
 `
 
+const SideMenu = styled.ul`
+  position: fixed;
+  top: 30px;
+  right: 15px;
+  text-align: right;
+  list-style: none;
+  font-size: 0.9rem;
+  margin: 0 16px 0 0;
+  z-index: 500;
+  display: none;
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    display: block;
+  }
+`
+const MenuItem = styled.li`
+  margin-bottom: 5px;
+
+  a {
+    color: ${Colours.headerText};
+
+    &:active,
+    &:visited {
+      color: ${Colours.headerText};
+    }
+    &:hover {
+      color: ${Colours.primary};
+    }
+  }
+`
+
 const Header = ({ siteMetaData }) => (
-  <StyledHeader>
+  <StyledHeader id="about-me">
+    <nav>
+      <SideMenu>
+        <MenuItem>
+          <a href="#about-me">About Me</a>
+        </MenuItem>
+        <MenuItem>
+          <p>Projects:</p>
+        </MenuItem>
+        <MenuItem>
+          <a href="#project-wtss">Where The Snow Settles</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="#project-aurora">Aurora</a>
+        </MenuItem>
+      </SideMenu>
+    </nav>
     <Content>
       <Title>{siteMetaData.title}</Title>
 

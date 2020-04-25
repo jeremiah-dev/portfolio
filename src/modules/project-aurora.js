@@ -86,7 +86,7 @@ const ProjectAurora = () => {
 
   return (
     <>
-      <ProjectSummaryWrapper>
+      <ProjectSummaryWrapper id="project-aurora">
         <ProjectSummaryContent column>
           <ProjectSummaryColumn>
             <Heading>Client / Project(s)</Heading>
@@ -195,8 +195,8 @@ const ProjectAurora = () => {
           <StyledImage fluid={data.Usage.childImageSharp.fluid} />
         </StyledImageWrapper>
         <Caption>
-          <DesktopOnly>Desktop and mobile versions</DesktopOnly>. The Usage
-          graph is dynamic, showing dollar, kilowatt or export (solar) views, in
+          Desktop (above) and mobile (below) versions. The Usage graph is
+          dynamic, showing dollar, kilowatt or export (solar) views, in
           different time periods, such as yearly, or hourly. Popups also give
           more info on every facet of the displayed data.
         </Caption>
@@ -218,9 +218,12 @@ const ProjectAurora = () => {
           <Text>
             The 'Broker' is an API layer that we introduced to enable queries to
             both old and new system with the one Azure AD identity, mapping data
-            from both to a common, standardised format. This work required no
-            changes to the frontend, and allowed customers to transition to the
-            new database solution with no interruption of service.
+            from both to a common, standardised format.
+          </Text>
+          <Text>
+            This work required no changes to the frontend, and allowed customers
+            to transition to the new database solution with no interruption of
+            service.
           </Text>
         </ContentImageBlock>
       </Section>

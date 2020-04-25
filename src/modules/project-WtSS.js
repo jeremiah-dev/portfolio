@@ -92,7 +92,7 @@ const ProjectWtSS = () => {
 
   return (
     <>
-      <ProjectSummaryWrapper>
+      <ProjectSummaryWrapper id="project-wtss">
         <ProjectSummaryContent column>
           <ProjectSummaryColumn>
             <Heading>Client / Project(s)</Heading>

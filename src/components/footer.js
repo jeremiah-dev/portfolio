@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons"
 import {
   faTwitter,
   faLinkedin,
@@ -26,12 +27,13 @@ const ExternalLinks = styled(Section)`
   padding: 0 0 1rem 0;
   display: flex;
   justify-content: center;
+  position: relative;
 `
 const IconLink = styled.a`
   text-decoration: none;
   padding: 0 5px;
   margin: 5px;
-  color: rgba(50, 50, 50, 0.8);
+  color: ${Colours.headerText};
   font-size: 2rem;
   transition-property: color;
   transition-duration: 0.4s;
