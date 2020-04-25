@@ -100,11 +100,18 @@ export const Offset = styled(StyledImageWrapper)`
   }
 `
 
-const ContentImageBlock = ({ src, width, align, shadowColour, children }) => {
+const ContentImageBlock = ({
+  src,
+  width,
+  align,
+  shadowColour,
+  margin,
+  children,
+}) => {
   if (!src) return <></>
 
   const displayType = width && width < 3 ? "inline-block" : "block"
-  const margin = 1
+  const marginWidth = margin || 1
   const imageWidth = width && width < 3 ? (width / 3) * 100 : 100
   const textWidth = width && width < 3 ? ((3 - width) / 3) * 100 : 100
 
@@ -113,17 +120,17 @@ const ContentImageBlock = ({ src, width, align, shadowColour, children }) => {
       <div>
         <StyledContent
           display={displayType}
-          width={textWidth - margin * 2}
+          width={textWidth - marginWidth * 2}
           align={align}
-          margin={margin}
+          margin={marginWidth}
         >
           {children}
         </StyledContent>
         <StyledImageWrapper
           display={displayType}
-          width={imageWidth - margin * 2}
+          width={imageWidth - marginWidth * 2}
           align={align}
-          margin={margin}
+          margin={marginWidth}
           shadowColour={shadowColour}
         >
           <StyledImage fluid={src} />
@@ -137,9 +144,9 @@ const ContentImageBlock = ({ src, width, align, shadowColour, children }) => {
     <div>
       <StyledImageWrapper
         display={displayType}
-        width={imageWidth - margin * 2}
+        width={imageWidth - marginWidth * 2}
         align={align}
-        margin={margin}
+        margin={marginWidth}
         shadowColour={shadowColour}
       >
         <StyledImage fluid={src} />
@@ -147,8 +154,8 @@ const ContentImageBlock = ({ src, width, align, shadowColour, children }) => {
       <StyledContent
         display={displayType}
         align={align}
-        width={textWidth - margin * 2}
-        margin={margin}
+        width={textWidth - marginWidth * 2}
+        margin={marginWidth}
       >
         {children}
       </StyledContent>

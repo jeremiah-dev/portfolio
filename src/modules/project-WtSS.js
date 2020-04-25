@@ -139,7 +139,7 @@ const ProjectWtSS = () => {
         <StyledImageWrapper shadowColour={"rgba(181, 198, 207, 0.3)"}>
           <StyledImage fluid={data.WtSSimg1.childImageSharp.fluid} />
         </StyledImageWrapper>
-        <Caption>All in-engine images are a work in progress.</Caption>
+        <Caption>All in-engine images/video are a work in progress.</Caption>
       </Section>
 
       <Section>
@@ -160,8 +160,8 @@ const ProjectWtSS = () => {
           </StyledImageWrapper>
         </div>
         <Caption>
-          Setup of a basic dialogue trigger. Includes triggered camera change,
-          UI prompt and a dynamic (pooled) dialogue popup.
+          Interactables and dialogue system. UI icons are pooled resources, as
+          are the dynamic dialogue popups.
         </Caption>
       </SmallerSection>
 

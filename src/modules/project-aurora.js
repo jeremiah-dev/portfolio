@@ -8,6 +8,7 @@ import {
   StyledImage,
   Offset,
   OffsetWrapper,
+  ContentImageBlock,
 } from "../components/image-block"
 import {
   Section,
@@ -161,20 +162,19 @@ const ProjectAurora = () => {
             <StyledLink href="http://www.nickrudenno.com/" target="blank">
               Nick Rudenno
             </StyledLink>
-            .{" "}
-            <span>
-              {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
-              Ltd.
-            </span>
+            .
           </Caption>
         </OffsetWrapper>
       </Section>
 
       <Section>
-        <Heading centered>SMB Product</Heading>
-        <Text>
-          <i>Currently in development.</i>
-        </Text>
+        <Heading>
+          SMB Product
+          <span style={{ fontWeight: "normal", fontStyle: "italic" }}>
+            {" "}
+            (currently in development)
+          </span>
+        </Heading>
         <Text>
           Previously, only residential customers have been able to use the
           Aurora+ App. This project introduces a new product, aimed at small and
@@ -191,40 +191,38 @@ const ProjectAurora = () => {
       </Section>
 
       <Section style={{ position: "relative" }}>
-        <DesktopOnly>
-          <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
-            <StyledImage fluid={data.Usage.childImageSharp.fluid} />
-          </StyledImageWrapper>
-        </DesktopOnly>
-        <FloatingImageWrapper shadowColour={"rgba(0,0,0, 0.1)"}>
-          <StyledImage fluid={data.UsageMobile.childImageSharp.fluid} />
-        </FloatingImageWrapper>
+        <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
+          <StyledImage fluid={data.Usage.childImageSharp.fluid} />
+        </StyledImageWrapper>
         <Caption>
           <DesktopOnly>Desktop and mobile versions</DesktopOnly>. The Usage
           graph is dynamic, showing dollar, kilowatt or export (solar) views, in
           different time periods, such as yearly, or hourly. Popups also give
           more info on every facet of the displayed data.
-          <span style={{ display: "block", marginTop: "3px" }}>
-            {"\u00A9"} Copyright {new Date().getFullYear()} Aurora Energy Pty
-            Ltd.
-          </span>
         </Caption>
       </Section>
 
       <Section>
-        <Heading centered>API Broker</Heading>
-        <Text>
-          Aurora recently introduced a new backend system for eventually storing
-          all of their 270,000+ customers, along with all of their billing and
-          electricity usage history.
-        </Text>
-        <Text>
-          The 'Broker' is an API layer that we introduced to enable queries to
-          both old and new system with the one Azure AD identity, mapping data
-          from both to a common, standardised format. This work required no
-          changes to the frontend, and allowed customers to transition to the
-          new database solution with no interruption of service.
-        </Text>
+        <ContentImageBlock
+          src={data.UsageMobile.childImageSharp.fluid}
+          width={1}
+          shadowColour={"rgba(0,0,0, 0.1)"}
+          align="right"
+        >
+          <Heading>API Broker</Heading>
+          <Text>
+            Aurora recently introduced a new backend system for eventually
+            storing all of their 270,000+ customers, along with all of their
+            billing and electricity usage history.
+          </Text>
+          <Text>
+            The 'Broker' is an API layer that we introduced to enable queries to
+            both old and new system with the one Azure AD identity, mapping data
+            from both to a common, standardised format. This work required no
+            changes to the frontend, and allowed customers to transition to the
+            new database solution with no interruption of service.
+          </Text>
+        </ContentImageBlock>
       </Section>
     </>
   )

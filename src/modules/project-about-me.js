@@ -73,11 +73,10 @@ const ProjectAboutMe = () => {
       </Section>
 
       <SmallerSection>
-        <Heading>About Me</Heading>
         <Text>
           I'm currently working at{" "}
           <StyledLink href="https://rxpservices.com/" target="blank">
-            RXP Services
+            RXP Group
           </StyledLink>{" "}
           as a Senior Full-stack Web Developer, and{" "}
           <StyledLink href="http://myriadgamesstudio.com/" target="blank">

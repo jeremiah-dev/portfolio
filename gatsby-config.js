@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Jeremiah Walter`,
-    description: `Senior Developer at RXP Services, Technical Lead at Myriad Games Studio`,
+    description: `Senior Developer at RXP Group, Technical Lead at Myriad Games Studio`,
     author: `@_Walt3r`,
     siteUrl: `https://jeremiahwalter.com`,
     contactEmail: `jeremiahwalter.dev@gmail.com`,

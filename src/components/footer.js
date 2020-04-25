@@ -82,6 +82,10 @@ const Footer = ({ siteMetaData }) => {
             </span>
           )}
         </Text>
+        <Text centered style={{}}>
+          Aurora project images - {"\u00A9"} Copyright{" "}
+          {new Date().getFullYear()}, Aurora Energy Pty Ltd.
+        </Text>
       </StyledFooter>
     </>
   )
