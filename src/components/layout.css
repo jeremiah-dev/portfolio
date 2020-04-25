@@ -89,7 +89,7 @@ img {
 }
 svg:not(:root) {
   overflow: hidden;
-  font-size: 1em;
+  width: 1em;
 }
 code,
 kbd,
