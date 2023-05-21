@@ -98,7 +98,7 @@ export const DesktopOnly = styled.span`
   }
 `
 export const MobileOnly = styled.span`
-  display: intiial;
+  display: initial;
   @media (min-width: ${Responsive.med.minWidth}px) {
     display: none;
   }

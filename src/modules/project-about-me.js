@@ -5,7 +5,14 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
-import { Section, Heading, StyledLink, Text } from "../components/styles"
+import { 
+  Section, 
+  Heading, 
+  StyledLink, 
+  Text, 
+  StyledList,
+  StyledListItem
+} from "../components/styles"
 import { Responsive } from "../utils/constants"
 
 const Button = styled.a`
@@ -13,7 +20,7 @@ const Button = styled.a`
   font-weight: normal;
   border-radius: 3px;
   color: black;
-  padding: 4px 6px;
+  padding: ${props => (props.padded ? "6px 12px" : "4px 6px")};
   text-decoration: none;
   margin-top: 5px;
   background-color: transparent;
@@ -49,6 +56,28 @@ const SmallerSection = styled(Section)`
     padding: 40px 100px;
   }
 `
+const ForewordSection = styled(Section)`
+  text-align: center;
+  font-size: 0.7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  p { 
+    margin: 0;
+  }
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 400px;
+  }
+
+  @media (min-width: ${Responsive.lrg.minWidth}px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 512px;
+  }
+`
 
 const ProjectAboutMe = () => {
   const data = useStaticQuery(graphql`
@@ -63,48 +92,47 @@ const ProjectAboutMe = () => {
 
   return (
     <>
-      <Section bgColor="white" large>
-        <Heading>Hello and welcome to my portfolio!</Heading>
+      <ForewordSection>
         <Text>
-          My name is Jeremiah, and I'm a relentless creator of all things
-          digital. Whether it be making websites, mobile apps, games, digital
-          prototypes, or web serials, I like to keep busy and <i>inspired</i>.
+          In recognition of the deep history and culture of this Island,
+          I would like to acknowledge the Muwinina people, the traditional 
+          owners of the Land upon which I reside. I acknowledge and pay
+          my respects to all Tasmanian Aboriginal Communities; all
+          of whom have survived invasion and dispossession, and
+          continue to maintain their identity and culture.
         </Text>
-      </Section>
+      </ForewordSection>
 
-      <SmallerSection>
+      <Section bgColor="white" large>
+        <Heading>Hi, hello! 👋</Heading>
         <Text>
-          I'm currently working at{" "}
-          <StyledLink href="https://rxpservices.com/" target="blank">
-            RXP Group
-          </StyledLink>{" "}
-          as a Senior Full-stack Web Developer, and{" "}
-          <StyledLink href="http://myriadgamesstudio.com/" target="blank">
-            Myriad Games Studio
-          </StyledLink>{" "}
-          as the Lead Programmer.
+          The name's Jeremiah (he/him), but most people call me Jez. 
+          Welcome to my portfolio!
         </Text>
-        <br />
+        <br/>
+        <Heading>I suppose I should explain a few things.</Heading>
         <Text>
-          Please take a look through my latest projects below, or the{" "}
-          <StyledLink
-            href="https://github.com/jeremiah-dev/portfolio"
-            target="blank"
-          >
-            source code
-          </StyledLink>{" "}
-          for this site, and let me know if you would like to have a chat!
+          First of all, I hate all this 'I excel at Excel' stuff. 
+          Take a look at my <StyledLink href="https://www.linkedin.com/in/j-walter/" target="blank">LinkedIn profile</StyledLink> if you want all that professional self-agrandizement.
+        </Text>
+        <Text>
+          Secondly, this is a constantly evolving website, written from scratch.
+          If you love or hate something about it - tell me! 
+          Maybe I'll change things based on your feedback. Buuuut, maybe I won't.
+        </Text>
+        <Text>
+          Finally, I hope this portfolio gives you an idea of my personality and what I enjoy working on.  
+        </Text>
+        <Text>
+          Please send me a message if you'd like to talk! 
+          I will always accept unsolicited compliments and chats about my special interests.
         </Text>
         <Text margin="2rem 0 0 0" centered>
-          <Button
-            href={`mailto:${data.site.siteMetadata.contactEmail}`}
-            target="blank"
-          >
-            <IconInButton icon={faEnvelope} />
-            Message me
+          <Button padded href={`mailto:${data.site.siteMetadata.contactEmail}`} target="blank">
+           📧 📭
           </Button>
         </Text>
-      </SmallerSection>
+      </Section>
     </>
   )
 }

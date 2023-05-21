@@ -8,14 +8,18 @@ import "typeface-roboto"
 import "typeface-sansita"
 import "./layout.css"
 
-import { Colours } from "../utils/constants"
+import { Colours, Responsive } from "../utils/constants"
 import Header from "./header"
 import Footer from "./footer"
 
 const PageWrapper = styled.div`
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
   background-color: ${Colours.bgColor};
   color: ${Colours.headerText};
+
+  @media (min-width: ${Responsive.med.minWidth}px) {
+    padding: 2rem 0;
+  }
 `
 const Body = styled.main`
   // subtract the static heights of the header and footer

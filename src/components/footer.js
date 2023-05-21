@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
 `
 
 const ExternalLinks = styled(Section)`
-  padding: 0 0 1rem 0;
+  padding: 0 0 0.5rem 0;
   display: flex;
   justify-content: center;
   position: relative;
@@ -32,9 +32,9 @@ const ExternalLinks = styled(Section)`
 const IconLink = styled.a`
   text-decoration: none;
   padding: 0 5px;
-  margin: 5px;
+  margin: 0 2px;
   color: ${Colours.headerText};
-  font-size: 2rem;
+  font-size: 1rem;
   transition-property: color;
   transition-duration: 0.4s;
 

@@ -3,17 +3,12 @@ import React from "react"
 import styled from "styled-components"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import {
-  faTwitter,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope, faChevronUp } from "@fortawesome/free-solid-svg-icons"
+import { faTwitter, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import { Colours, Responsive } from "../utils/constants"
 
 const StyledHeader = styled.header`
-  min-height: 14rem;
   padding: 2rem 0;
 `
 const Content = styled.section`
@@ -54,7 +49,7 @@ const IconLink = styled.a`
   padding: 0 5px;
   margin: 5px;
   color: rgba(50, 50, 50, 0.8);
-  font-size: 2rem;
+  font-size: 1rem;
   transition-property: color;
   transition-duration: 0.4s;
 
@@ -95,14 +90,11 @@ const MenuItem = styled.li`
 `
 
 const Header = ({ siteMetaData }) => (
-  <StyledHeader id="about-me">
+  <StyledHeader id="top-section">
     <nav>
       <SideMenu>
         <MenuItem>
-          <a href="#about-me">About Me</a>
-        </MenuItem>
-        <MenuItem>
-          <p>Projects:</p>
+          <a href="#top-section"><FontAwesomeIcon icon={faChevronUp} /></a>
         </MenuItem>
         <MenuItem>
           <a href="#project-wtss">Where The Snow Settles</a>
@@ -116,8 +108,15 @@ const Header = ({ siteMetaData }) => (
       <Title>{siteMetaData.title}</Title>
 
       <Characteristics>
-        <Attribute>Creator</Attribute>
-        <Attribute>Developer</Attribute>
+      {/*
+        <Attribute>Inclusive</Attribute>
+        <Attribute>Supportive</Attribute>
+        <Attribute>Passionate</Attribute>
+        <Attribute>Approachable</Attribute>
+        <Attribute>Positive</Attribute>
+      */}
+        <Attribute>Empowering</Attribute>
+        <Attribute>Reliable</Attribute>
         <Attribute>Leader</Attribute>
       </Characteristics>
 
