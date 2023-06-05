@@ -1,17 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-
 import { 
   Section, 
   Heading, 
   StyledLink, 
   Text, 
-  StyledList,
-  StyledListItem
 } from "../components/styles"
 import { Responsive } from "../utils/constants"
 
@@ -33,27 +27,6 @@ const Button = styled.a`
   &:hover {
     background-color: white;
     box-shadow: 3px 5px 0px rgba(197, 135, 150, 0.75);
-  }
-`
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: rgba(50, 50, 50, 0.8);
-  font-size: 1.3em;
-  margin-right: 4px;
-  margin-bottom: 2px;
-  vertical-align: middle;
-  transition-property: color;
-  transition-duration: 0.4s;
-
-  &:last-child {
-    margin-bottom: 2px;
-  }
-`
-const IconInButton = styled(StyledIcon)`
-  vertical-align: middle;
-`
-const SmallerSection = styled(Section)`
-  @media (min-width: ${Responsive.med.minWidth}px) {
-    padding: 40px 100px;
   }
 `
 const ForewordSection = styled(Section)`

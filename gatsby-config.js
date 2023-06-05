@@ -9,19 +9,17 @@ module.exports = {
     githubRepository: `https://github.com/jeremiah-dev`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      // https://www.gatsbyjs.org/docs/add-a-manifest-file/#using-gatsby-plugin-manifest
-      // better google results for progressive web apps:
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -33,9 +31,6 @@ module.exports = {
         icon: `src/assets/images/Avatar.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
   ],
 }

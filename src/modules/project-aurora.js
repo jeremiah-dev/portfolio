@@ -1,11 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
-import { Responsive } from "../utils/constants"
-
+import { StaticImage } from "gatsby-plugin-image"
 import {
   StyledImageWrapper,
-  StyledImage,
   Offset,
   OffsetWrapper,
   ContentImageBlock,
@@ -16,7 +12,6 @@ import {
   StyledLink,
   Text,
   Caption,
-  DesktopOnly,
 } from "../components/styles"
 import {
   ProjectSummaryWrapper,
@@ -24,63 +19,10 @@ import {
   ProjectSummaryColumn,
 } from "../components/project-summary"
 
-const FloatingImageWrapper = styled(StyledImageWrapper)`
-  @media (min-width: ${Responsive.med.minWidth}px) {
-    position: absolute;
-    top: 65px;
-    right: 90px;
-    width: 270px;
-  }
-`
 
 const ProjectAurora = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      BillPrediction: file(
-        relativePath: { eq: "images/AuroraBillPrediction.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 256, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      UsageMobileSMB: file(
-        relativePath: { eq: "images/AuroraUsageMobileSMB.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 256, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      HomeMobile: file(
-        relativePath: { eq: "images/AuroraHomePageMobile.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 256, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      Usage: file(relativePath: { eq: "images/usage-medium.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      UsageMobile: file(relativePath: { eq: "images/usage-small.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 270, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
-  // minus the default StyledImage margin
+  // minus the default StaticImage margin
   const containerAdjustment = 4
   const col3Width = (1 / 3) * 100 - (3 - containerAdjustment / 8)
 
@@ -139,14 +81,14 @@ const ProjectAurora = () => {
             shadowColour={"rgba(27, 124, 188, 0.15)"}
             margin={1.25}
           >
-            <StyledImage fluid={data.HomeMobile.childImageSharp.fluid} />
+            <StaticImage src={"../assets/images/AuroraHomePageMobile.png"} alt="" />
           </Offset>
           <Offset
             width={col3Width}
             shadowColour={"rgba(45, 52, 75, 0.15)"}
             margin={1.25}
           >
-            <StyledImage fluid={data.BillPrediction.childImageSharp.fluid} />
+            <StaticImage src={"../assets/images/AuroraBillPrediction.png"} alt="" />
           </Offset>
           <Offset
             width={col3Width}
@@ -154,7 +96,7 @@ const ProjectAurora = () => {
             shadowColour={"rgba(45, 52, 75, 0.15)"}
             margin={1.25}
           >
-            <StyledImage fluid={data.UsageMobileSMB.childImageSharp.fluid} />
+            <StaticImage src={"../assets/images/AuroraUsageMobileSMB.png"} alt="" />
           </Offset>
 
           <Caption>
@@ -192,7 +134,7 @@ const ProjectAurora = () => {
 
       <Section style={{ position: "relative" }}>
         <StyledImageWrapper shadowColour={"rgba(26, 123, 187, 0.15)"}>
-          <StyledImage fluid={data.Usage.childImageSharp.fluid} />
+          <StaticImage src={"../assets/images/usage-medium.png"} alt="" />
         </StyledImageWrapper>
         <Caption>
           Desktop (above) and mobile (below) versions. The Usage graph is
@@ -204,7 +146,7 @@ const ProjectAurora = () => {
 
       <Section>
         <ContentImageBlock
-          src={data.UsageMobile.childImageSharp.fluid}
+          image={<StaticImage src={"../assets/images/AuroraUsageMobileSMB.png"} alt="" />}
           width={1}
           shadowColour={"rgba(0,0,0, 0.1)"}
           align="right"
