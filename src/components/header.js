@@ -1,13 +1,10 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope, faChevronUp } from "@fortawesome/free-solid-svg-icons"
 import { faTwitter, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
-
 import { Colours, Responsive } from "../utils/constants"
-
 const StyledHeader = styled.header`
   padding: 2rem 0;
 `
@@ -26,7 +23,6 @@ const Title = styled.h1`
     background: ${Colours.primary};
   }
 `
-
 const Characteristics = styled.div`
   display: flex;
   align-items: center;
@@ -42,7 +38,6 @@ const Attribute = styled.h2`
   color: black;
   background-color: ${Colours.primary};
 `
-
 const ExternalLinks = styled.div``
 const IconLink = styled.a`
   text-decoration: none;
@@ -57,7 +52,6 @@ const IconLink = styled.a`
     color: ${Colours.primary};
   }
 `
-
 const SideMenu = styled.ul`
   position: fixed;
   top: 30px;
@@ -88,7 +82,6 @@ const MenuItem = styled.li`
     }
   }
 `
-
 const Header = ({ siteMetaData }) => (
   <StyledHeader id="top-section">
     <nav>
@@ -108,16 +101,9 @@ const Header = ({ siteMetaData }) => (
       <Title>{siteMetaData.title}</Title>
 
       <Characteristics>
-      {/*
-        <Attribute>Inclusive</Attribute>
-        <Attribute>Supportive</Attribute>
-        <Attribute>Passionate</Attribute>
-        <Attribute>Approachable</Attribute>
-        <Attribute>Positive</Attribute>
-      */}
-        <Attribute>Empowering</Attribute>
         <Attribute>Reliable</Attribute>
-        <Attribute>Leader</Attribute>
+        <Attribute>Approachable</Attribute>
+        <Attribute>Persistent</Attribute>
       </Characteristics>
 
       <ExternalLinks>

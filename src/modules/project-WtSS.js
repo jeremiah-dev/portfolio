@@ -1,17 +1,13 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-
 import { Responsive } from "../utils/constants"
-
 import SnowCreationVideoWebM from "../assets/videos/snow-creation.webm"
 import SnowCreationVideoMp4 from "../assets/videos/snow-creation.mp4"
 import InteractablesVideoWebM from "../assets/videos/interactables.webm"
 import InteractablesVideoMp4 from "../assets/videos/interactables.mp4"
-
 import {
   StyledImageWrapper,
-  StyledImage,
   ContentImageBlock,
 } from "../components/image-block"
 import {
@@ -28,14 +24,11 @@ import {
   ProjectSummaryContent,
   ProjectSummaryColumn,
 } from "../components/project-summary"
-
 const SmallerSection = styled(Section)`
   @media (min-width: ${Responsive.med.minWidth}px) {
     padding: 40px 100px;
   }
 `
-
-// need to add poster={image}
 const SnowCreationVideo = () => (
   <video
     autoPlay
@@ -64,31 +57,6 @@ const InteractablesVideo = () => (
 )
 
 const ProjectWtSS = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      WtSSimg1: file(relativePath: { eq: "images/creepy-snowforest.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg8: file(relativePath: { eq: "images/snow-meshes.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      WtSSimg9: file(relativePath: { eq: "images/snow-meshes-2.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 400, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <>
@@ -137,7 +105,11 @@ const ProjectWtSS = () => {
 
       <Section>
         <StyledImageWrapper shadowColour={"rgba(181, 198, 207, 0.3)"}>
-          <StyledImage fluid={data.WtSSimg1.childImageSharp.fluid} />
+          <StaticImage 
+            src={"../assets/images/creepy-snowforest.png"} 
+            alt="" 
+            loading="eager"
+          />
         </StyledImageWrapper>
         <Caption>All in-engine images/video are a work in progress.</Caption>
       </Section>
@@ -226,7 +198,7 @@ const ProjectWtSS = () => {
       <Section>
         <ContentImageBlock
           width={1.5}
-          src={data.WtSSimg8.childImageSharp.fluid}
+          image={<StaticImage src={"../assets/images/snow-meshes.png"} alt="" />}
           shadowColour={"rgba(181, 198, 207, 0.3)"}
           align="left"
         >
@@ -254,7 +226,7 @@ const ProjectWtSS = () => {
       <Section>
         <ContentImageBlock
           width={1.5}
-          src={data.WtSSimg9.childImageSharp.fluid}
+          image={<StaticImage src={"../assets/images/snow-meshes-2.png"} alt="" />}
           shadowColour={"rgba(181, 198, 207, 0.3)"}
           align="right"
         >

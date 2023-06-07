@@ -1,5 +1,4 @@
 import React from "react"
-import Img from "gatsby-image"
 import styled, { css } from "styled-components"
 import { Responsive } from "../utils/constants"
 
@@ -39,10 +38,6 @@ const StyledImageWrapper = styled.div`
         top: ${props.top};
       `};
   }
-`
-
-const StyledImage = styled(Img)`
-  border-radius: 4px;
 `
 
 const StyledContent = styled.div`
@@ -101,14 +96,14 @@ export const Offset = styled(StyledImageWrapper)`
 `
 
 const ContentImageBlock = ({
-  src,
+  image,
   width,
   align,
   shadowColour,
   margin,
   children,
 }) => {
-  if (!src) return <></>
+  if (!image) return <></>
 
   const displayType = width && width < 3 ? "inline-block" : "block"
   const marginWidth = margin || 1
@@ -133,7 +128,7 @@ const ContentImageBlock = ({
           margin={marginWidth}
           shadowColour={shadowColour}
         >
-          <StyledImage fluid={src} />
+          {image}
         </StyledImageWrapper>
       </div>
     )
@@ -149,7 +144,7 @@ const ContentImageBlock = ({
         margin={marginWidth}
         shadowColour={shadowColour}
       >
-        <StyledImage fluid={src} />
+        {image}
       </StyledImageWrapper>
       <StyledContent
         display={displayType}
@@ -163,4 +158,4 @@ const ContentImageBlock = ({
   )
 }
 
-export { StyledImageWrapper, StyledImage, StyledContent, ContentImageBlock }
+export { StyledImageWrapper, StyledContent, ContentImageBlock }
